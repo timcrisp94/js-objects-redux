@@ -8,19 +8,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk&display=swap" rel="stylesheet">
   <script defer src="/js/guess-the-number.js"></script>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/guess-the-numbers.css">
   <title>objects</title>
 </head>
 <body>
   <h1>guess the number, redux</h1>
-  <h3>rules</h3>
-<ul class="rules">
-  <li>take a range of numbers 1-100</li>
-  <li>smallest number to biggest</li>
-  <li>given that range, a random number is generated</li>
-  <li>the user has to guess that random number</li>
-  <li>game needs to track how many guesses, and if we guessed right or wrong</li>
-</ul>  
+  <h2 id="message">Please enter a guess between 1 and 100!</h2>
+  <form>
+    <input id="guess-input" placeholder="Enter guess here..." type="text">
+    <button id="guess-button" type="submit">Guess</button>
+    <button id="reset-button" type="reset" hidden>Reset</button>
+  </form>
+  <h4 id="prev-guesses-msg"></h4>
+  <div id="prev-guesses"></div>
+  
 <div class="links">
   <a href="methods.html">methods</a>
 
