@@ -1,6 +1,6 @@
 body {
-  background-color: #181a1b;
-  color: #d1cdc7;
+  background-color: #668697;
+  color: #e3c69a;
   margin-top: 50px;
   text-align: center;
 }
@@ -25,4 +25,5 @@ form {
 #guess-button,
 #reset-button {
   margin-left: 24px;
+  border-radius: 10%;
 }
