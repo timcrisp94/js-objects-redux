@@ -1,3 +1,7 @@
 body {
   font-family: 'Familjen Grotesk', sans-serif;
 }
+
+.indent {
+  text-indent: 2em;
+}
