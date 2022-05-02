@@ -41,6 +41,7 @@ function init() {
   isWinner = false
   secretNum = Math.floor(Math.random() * 100 + 1)
   console.log(secretNum)
+  render()
 }
 
 function checkGuess(guess) {
@@ -53,4 +54,28 @@ function checkGuess(guess) {
   guessList.push(guess)
   console.log(guessList)
   render()
+}
+
+function render() {
+  const lastGuess = guessList.at(-1)
+  console.log(lastGuess)
+  const div = document.createElement("div")
+  div.textContent = lastGuess
+
+  if (guessList.length === 1) {
+    prevGuessMsg.textContent = "Previous Guesses:"
+    resetBtn.removeAttribute("hidden")
+  }
+
+  if (isWinner) {
+    renderWin(div)
+  } else if (lastGuess > secretNum || lastGuess < secretNum) {
+    renderGuess(div, lastGuess)
+  }
+
+}
+
+function renderError(error) {
+  messageEl.className = "error"
+  messageEl.textContent = error
 }
