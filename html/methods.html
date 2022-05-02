@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk&display=swap" rel="stylesheet">
-  <script defer src="/js/guess-the-number.js"></script>
+  <script defer src="/js/methods.js"></script>
   <link rel="stylesheet" href="/css/style.css">
   <title>object methods</title>
 </head>
@@ -15,7 +15,38 @@
   <h1>Iterating over an object's properties</h1>
   <p>We can iterate over an object's properties using a for...in loop</p>
   <p>for (let key in game) {</p>
-    <p class="indent"></p>
+    <p class="indent">console.log(`The value of the ${key} property is ${game[key]}`)</p>
+  <p>}</p>
+  <p>(Or a good old for loop - but for in works better)</p>
+  <h1>Super Hot Object methods</h1>
+  <h2><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys">Object.keys()</a></h2>
+  <p>Object.keys() returns an array of a given object's own enumberable property names iterated in the same order that a normal loop would</p>
+  <p>const object1 = {</p>
+    <p class="indent">a: 'something',</p>
+    <p class="indent">b: 42,</p>
+    <p class="indent">c: false</p>
+  <p>}</p>
+  <p>console.log(Object.keys(object1))</p>
+  <p>//expect output: Array ['a','b', 'c']</p>
+  <h2><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values">Object.values()</a></h2>
+  <p>Object.values() returns an array of a given object's own enumberable property values iterated in the same order that a normal loop would</p>
+  <p>const object1 = {</p>
+    <p class="indent">a: 'something',</p>
+    <p class="indent">b: 42,</p>
+    <p class="indent">c: false</p>
+  <p>}</p>
+  <p>console.log(Object.values(object1))</p>
+  <p>//expect output: Array ['something', 42, false]</p>
+  <h2><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entriess">Object.entries()</a></h2>
+  <p>Object.entries() returns an array of the whole kit and caboodle</p>
+  <p>const object1 = {</p>
+    <p class="indent">a: 'something',</p>
+    <p class="indent">b: 42,</p>
+    <p class="indent">c: false</p>
+  <p>}</p>
+  <p>for (const [key, value] of Object.entries(object1))</p>
+    <p class="indent">console.log(`${key}: ${value}`)</p>
+  <p>//expect output: 'a: something' b: 42 c: false</p>
   
 </body>
 </html>
