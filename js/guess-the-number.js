@@ -90,3 +90,16 @@ function renderWin(div) {
     messageEl.textContent = `Congratulations! You found the number ${secretNum} in ${guessList.length} guesses!`
   }
 }
+
+function renderGuess(div, lastGuess) {
+  if (lastGuess < secretNum) {
+    messageEl.className = "low"
+    div.className = "low"
+    messageEl.textContent = `${lastGuess} is too low, try again!`
+  } else if (lastGuess > secretNum) {
+    messageEl.className = "high"
+    div.className = "high"
+    messageEl.textContent = `${lastGuess} is too high, try again!`
+  }
+  guessesEl.appendChild(div)
+}
