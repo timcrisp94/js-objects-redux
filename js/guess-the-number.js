@@ -12,7 +12,7 @@ let secretNum, guessList, isWinner
 const form = document.querySelector("form")
 const guessInput = document.querySelector("#guess-input")
 const guessesEl = document.querySelector("#prev-guesses")
-const messagesEl = document.querySelector("#message")
+const messageEl = document.querySelector("#message")
 const resetBtn = document.querySelector("#reset-button")
 const prevGuessMsg = document.querySelector("#prev-guesses-msg")
 
@@ -34,7 +34,7 @@ init();
 
 function init() {
   guessesEl.textContent = ""
-  messagesEl.textContent = "Please enter a guess between 1 and 100"
+  messageEl.textContent = "Please enter a guess between 1 and 100"
   resetBtn.setAttribute("hidden", true)
   prevGuessMsg.textContent = ""
   guessList = []
@@ -47,7 +47,7 @@ function init() {
 function checkGuess(guess) {
   guessInput.value = ""
   if (isNaN(guess) || guess < 1 || guess > 100) {
-    messagesEl.textContent = "WHOOPS enter a NUMBER between 1 and 100"
+    messageEl.textContent = "WHOOPS enter a NUMBER between 1 and 100"
   } else if (guess === secretNum) {
     isWinner = true
   }
@@ -78,4 +78,15 @@ function render() {
 function renderError(error) {
   messageEl.className = "error"
   messageEl.textContent = error
+}
+
+function renderWin(div) {
+  messageEl.className = "winner"
+  div.className = "winner"
+  guessesEl.appendChild(div)
+  if (guessList.length === 1) {
+    messageEl.textContent = `You found the number in one guess!`
+  } else {
+    messageEl.textContent = `Congratulations! You found the number ${secretNum} in ${guessList.length} guesses!`
+  }
 }
